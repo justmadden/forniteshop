@@ -80,6 +80,7 @@ header {
   background: url("../img/BgTop.svg") no-repeat;
   background-size: cover;
   position: relative;
+  background-position: bottom;
   padding: 0;
 }
 
@@ -348,6 +349,7 @@ header {
 }
 
 footer {
+  overflow: hidden;
   background: url("../img/Footer.svg");
   background-repeat: no-repeat;
   background-position: top center;
