@@ -8,6 +8,7 @@ $purple: #CD40F1;
 $purpleDark: #6E0E87;
 $gold :#FFC121;
 $goldDark: #9D5E00;
+$orange: #F97B3F;
 $black1: #333333;
 $brown: #6D3400;
 $blue: #33BAE4;
@@ -77,6 +78,7 @@ header{
     align-items: center;
     padding: 30px 20px 0px 20px;
     margin-bottom: 25px;
+    transition: .4;
     position: relative;
     &-item{
         font-family: "Oswald", Arial, Helvetica, sans-serif;
@@ -95,13 +97,21 @@ header{
    }
 }
 .header-menu.invisible{
-    opacity: 0;
+    opacity: 1;
     z-index: 2;
 }
+.header-menu.fixed.Show{
+    display: flex;
+    animation: Show .4s forwards;
+}
 .header-menu.fixed{
+    background: $orange;
     position: fixed;
     z-index: 3;
     left: 50%;
+    display: none;
+    opacity: 0;
+    padding-bottom: 27px;
     transform: translateX(-50%)
 }
 .header-menu-item.Logo{
@@ -128,6 +138,7 @@ header{
     transform: translateX(-50%)
 }
 .header-text{
+    z-index: 2;
     font-family: "Roboto",Arial, Helvetica, sans-serif;
     font-weight: 300;
     font-size: 18px;
@@ -161,15 +172,18 @@ header{
     right: 0;
     bottom: 2vh;
     & img{
-        height: 50vh;
+        width: 769px;
+        height: 765px;
     }
 }
 .header-slider{
    
     &-item{
         margin-left: 10px;
-        width: 548px !important;
-        height: 360px;
+        min-width: 300px;
+        width: 548px;
+        max-width: 548px;
+        height: 320px;
         position: relative;
         padding-left: 16px;
         font-family: 'Oswald',Arial, Helvetica, sans-serif;
@@ -188,7 +202,8 @@ header{
             position: absolute;
             right: 0;
             top: 0;
-            width: 360px;
+            width: 60%;
+            max-width: 360px;
             height: 100%;
         }
         &-title{
@@ -296,4 +311,13 @@ footer{
     padding-top: 50px;
     min-height: 300px;
 
+}
+
+@keyframes Show{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1
+    }
 }
