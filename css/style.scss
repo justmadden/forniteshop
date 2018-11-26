@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700&subset=cyrillic');
+$bodybg : #E5E5E5;
+$white: #ffffff;
+$radialOrangeGradient : radial-gradient(472.50px at 50% 50%, #F9BA3F 0%, #F97B3F 100%);
+$yellow: #FFF500;
+$purple: #CD40F1;
+$purpleDark: #6E0E87;
+$gold :#FFC121;
+$goldDark: #9D5E00;
+$black1: #333333;
+$brown: #6D3400;
+$blue: #33BAE4;
+$blueDark: #164D9E;
+*{
+    box-sizing: border-box;
+}
+html{
+    padding: 0;
+}
+.container{
+    max-width: 1920px;
+    margin: 0 auto;
+}
+.social{
+    margin: 5px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & img{
+        margin: 0 15px;
+    }
+}
+.slick-slide{
+    margin: 0px 13px;
+}
+body{
+    background: $white;
+    padding: 0;
+}
+.flex-center{
+    justify-content: center;
+    display: flex;
+}
+.basket{
+    position: absolute;
+    right: 30px;
+    display: inline-flex;
+    align-items: center; 
+    cursor: pointer;
+    &-count{
+        display: inline-block;
+        font-size: 24px;
+        color: $black1;
+        font-weight: 700;
+        font-family: "Oswald", Arial, Helvetica, sans-serif;
+        background: url('../img/basketCircle.svg');
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: bottom;
+        padding: 0 5px 2px 5px
+    }
+}
+header{
+    min-height: 95vh;
+    max-height: 931px;
+    background: url('../img/BgTop.svg') no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 0;
+}
+.header-menu{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px 0px 20px;
+    margin-bottom: 25px;
+    position: relative;
+    &-item{
+        font-family: "Oswald", Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 24px;
+        text-transform: uppercase;
+        margin: 0px 30px;
+        text-align: center;
+        & > a{
+            color: $white;
+            text-decoration: none;
+            &:hover{
+                color: $black1
+            }
+        }
+   }
+}
+.header-menu.invisible{
+    opacity: 0;
+    z-index: 2;
+}
+.header-menu.fixed{
+    position: fixed;
+    z-index: 3;
+    left: 50%;
+    transform: translateX(-50%)
+}
+.header-menu-item.Logo{
+    font-size: 72px;
+    margin: 0px 40px;
+    & > a{
+        &:hover{
+            color: $white;
+        }
+    }
+}
+.header-menu-item.Soon{
+    position: relative;
+
+    & > a{
+        color: rgba(255, 255, 255, 0.5);
+        cursor: not-allowed;
+    }
+}
+.header-menu-item .Soon{
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+.header-text{
+    font-family: "Roboto",Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    text-align: center;
+    color: $brown;
+    background: url('../img/bgText.svg') no-repeat;
+    background-size: contain;
+    padding: 25px 32px 40px 55px;
+    display: inline-block;
+    margin-bottom: 70px;
+}
+.header-label span{
+    display: inline-flex;
+    background: url('../img/label.svg') no-repeat;
+    background-size: contain;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 32px 25px 25px;
+    font-family: "Oswald", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: $white;
+    margin-left: 40px;
+    & img{
+        margin-left: 15px;
+    }
+}
+.header-skin{
+    position: absolute;
+    right: 0;
+    bottom: 2vh;
+    & img{
+        height: 50vh;
+    }
+}
+.header-slider{
+   
+    &-item{
+        margin-left: 10px;
+        width: 548px !important;
+        height: 360px;
+        position: relative;
+        padding-left: 16px;
+        font-family: 'Oswald',Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        box-shadow: 0px 0px 20px rgba(102, 1, 128, 0.4);
+        &.purple{
+            color: $purpleDark;
+            background: $purple;
+        }
+        &.gold{
+            color: $goldDark;
+            background: $gold;
+        }
+        &-bg{
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 360px;
+            height: 100%;
+        }
+        &-title{
+            position: relative;
+            z-index: 1;
+            padding-top: 35px;
+            font-size: 64px;
+            margin-bottom: 15px;
+        }
+        &-subtitle{
+            position: relative;
+            z-index: 1;
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-left: 3px;
+        }
+        &-rating{
+            position: relative;
+            z-index: 1;
+            display: block;
+            margin-bottom: 30px;
+            svg{
+                width: 17px;
+                height: 17px;
+                margin-right: 4px;
+                path{
+                    fill: $yellow;
+                }
+            }
+        }
+        &-prevPrice{
+            font-size: 24px;
+            padding: 0 10px;
+            z-index: 1;
+            position: relative;
+            margin-left: -10px;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.7); /* Will override color (regardless of order) */
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: #6E0E87;
+            display: inline-block;
+            margin-bottom: 20px;
+            &::after{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 2;
+                background: url('../img/priceLine.svg') no-repeat;
+                background-size: 100%;
+                background-position: center center;
+            }
+        }
+        &-price{
+            font-size: 36px;
+            position: relative;
+            z-index: 1;
+            -webkit-text-fill-color: $white; /* Will override color (regardless of order) */
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: #6E0E87;
+        }
+    }
+}
+.shopCaption{
+    font-size: 72px;
+    text-transform: uppercase;
+    font-family: "Oswald", Arial, Helvetica, sans-serif;
+    color: $blue;
+    text-align: center;
+    font-weight: 700;
+}
+.shopSubtitle{
+    font-size: 18px;
+    text-align: center;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    
+}
+.main-label span{
+    min-width: 300px;
+    display: inline-flex;
+    background: url('../img/label.svg') no-repeat;
+    background-size: contain;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 32px 25px 25px;
+    font-family: "Oswald", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: $white;
+    margin-left: 40px;
+    & img{
+        margin-left: 15px;
+    }
+}
+footer{
+    background: url('../img/Footer.svg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    padding-top: 50px;
+    min-height: 300px;
+
+}
