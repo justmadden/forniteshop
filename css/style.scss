@@ -10,6 +10,8 @@ $gold :#FFC121;
 $goldDark: #9D5E00;
 $orange: #F97B3F;
 $black1: #333333;
+$black2: #313131;
+$gray: #939393;
 $brown: #6D3400;
 $blue: #33BAE4;
 $blueDark: #164D9E;
@@ -28,6 +30,8 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 4;
+    position: relative;
     & img{
         margin: 0 15px;
     }
@@ -70,6 +74,7 @@ header{
     position: relative;
     background-position: bottom;
     padding: 0;
+    padding-bottom: 5px;
 }
 .header-menu{
     width: 100%;
@@ -125,17 +130,17 @@ header{
 }
 .header-menu-item.Soon{
     position: relative;
-
-    & > a{
-        color: rgba(255, 255, 255, 0.5);
-        cursor: not-allowed;
-    }
 }
 .header-menu-item .Soon{
     position: absolute;
     bottom: -30px;
     left: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
+
+    & > a{
+        color: rgba(255, 255, 255, 0.5);
+        cursor: not-allowed;
+    }
 }
 .header-text{
     z-index: 2;
@@ -163,6 +168,7 @@ header{
     text-transform: uppercase;
     color: $white;
     margin-left: 40px;
+    margin-bottom: 30px;
     & img{
         margin-left: 15px;
     }
@@ -209,7 +215,7 @@ header{
         &-title{
             position: relative;
             z-index: 1;
-            padding-top: 35px;
+            padding-top: 15px;
             font-size: 64px;
             margin-bottom: 15px;
         }
@@ -224,7 +230,7 @@ header{
             position: relative;
             z-index: 1;
             display: block;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             svg{
                 width: 17px;
                 height: 17px;
@@ -244,7 +250,7 @@ header{
             -webkit-text-stroke-width: 1px;
             -webkit-text-stroke-color: #6E0E87;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
             &::after{
                 content: '';
                 position: absolute;
@@ -263,11 +269,83 @@ header{
             font-size: 36px;
             position: relative;
             z-index: 1;
+            margin-bottom: 10px;
             -webkit-text-fill-color: $white; /* Will override color (regardless of order) */
             -webkit-text-stroke-width: 1px;
             -webkit-text-stroke-color: #6E0E87;
         }
+        &-btn{
+            width: 240px;
+            color: $black2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1;
+            position: relative;
+            padding: 0;
+            margin: 0;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            span:nth-child(1){
+                padding: 4px 55px;
+                background: $yellow;
+                display: inline-block;
+                font-family: 'Oswald',Arial, Helvetica, sans-serif;
+                font-weight: 700;
+                font-size: 24px;
+                text-transform: uppercase;
+            }
+            span:nth-child(2){
+                padding: 3px 7px;
+                background: $yellow;
+                display: inline-block;
+                font-family: 'Oswald',Arial, Helvetica, sans-serif;
+                font-weight: 700;
+                font-size: 24px;
+                text-transform: uppercase;
+            }
+        }
     }
+}
+.slick-dots{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+  }
+.slick-dots li{
+    list-style-type: none;
+    margin: 0 5px;
+    padding: 0;
+    display: inline-block;
+}
+.slick-dots li button{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display:inline-block;
+    background: transparent;
+    border: 2px solid $white;
+    outline: none;
+}
+.slick-dots li.slick-active button{
+    border: none;
+    width: 22px;
+    height: 22px;
+    background: $white;
+}
+.sliderNavWrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0
+}
+.prev{
+    margin-right: 25px;
+}
+.next{
+    margin-left: 25px;
 }
 .shopCaption{
     font-size: 72px;
@@ -282,7 +360,141 @@ header{
     text-align: center;
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-weight: 300;
-    
+    margin-bottom: 70px;
+}
+.shopRow{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    .sortBlock{
+        margin-left: 30px;
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
+        span{
+            font-size: 18px;
+            text-align: center;
+            font-weight: 300;
+            color: $gray;
+            margin-right: 20px;
+        }
+        button{
+            background: transparent;
+            border: none;
+            margin-right: 10px;
+            font-size: 18px;
+            img{
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+.shop{
+    display: flex;
+    padding: 50px 0px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.shop-item{
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+    font-family: "Oswald", Arial, Helvetica, sans-serif;
+    width: 264px;
+    padding: 10px;
+    height: 539px;
+    position: relative;
+    background-size: contain;
+    background-position-x: left;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    font-weight: bold;
+    margin: 20px 30px;
+    .margin-block{
+        height: 43%;
+    }
+
+    &.purple{
+        background-image: url('../img/purpleBg.svg');
+        color: $purpleDark;
+        
+    }
+    &.gold{
+        background: url('../img/yellowBg.svg');
+        color: $goldDark;
+        
+    }
+    &.rare{
+        background-image: url('../img/blueBg.svg');
+        color: $blueDark;
+
+    }
+    &-rating{
+        position: relative;
+        z-index: 1;
+        display: block;
+        margin-bottom: 50px;
+        svg{
+            width: 17px;
+            height: 17px;
+            margin-right: 4px;
+            path{
+                fill: $yellow;
+            }
+        }
+    }
+    &-btn{
+        width: 100%;
+        color: $black2;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1;
+        position: relative;
+        padding: 0;
+        margin: 0;
+        border: none;
+        background: transparent;
+        font-weight: 700;
+        cursor: pointer;
+        span:nth-child(1){
+            padding: 5px 55px;
+            background: $yellow;
+            display: inline-block;
+            font-size: 24px;
+            text-transform: uppercase;
+            font-family: "Oswald", Arial, Helvetica, sans-serif;
+        }
+        span:nth-child(2){
+            padding: 3px 7px;
+            background: $yellow;
+            display: inline-block;
+            font-family: 'Oswald',Arial, Helvetica, sans-serif;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+    }
+    &-title{
+        font-size: 36px;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 1;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+    &-price{
+        font-size: 36px;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 20px;
+        -webkit-text-fill-color: $white; /* Will override color (regardless of order) */
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #6E0E87;
+    }
+    >img{
+        position: absolute;
+        width: 100%;
+        height: 264px;
+        top: 0;
+        left: 0;
+    }
 }
 .main-label span{
     min-width: 300px;
@@ -319,5 +531,10 @@ footer{
     }
     100%{
         opacity: 1
+    }
+}
+@media only screen and (max-width: 1600px){
+    .basket{
+        right: 5px;
     }
 }
