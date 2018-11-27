@@ -8,6 +8,9 @@ $(document).ready(() => {
         centerMode: true,
         focusOnSelect: true,
         centerPadding: '50px',
+        prevArrow: $('.prev'),
+        nextArrow: $('.next'),
+        arrow: true,
         responsive: [
             {
                 breakpoint: 3000,
@@ -75,7 +78,9 @@ $(document).ready(() => {
                 }
             }
         ]
-    })
+    });
+
+
     function OnScroll(e) {
         var Fixed = $('.header-menu.fixed')[0];
         var Invisible = $('.header-menu.invisible')[0];
@@ -87,5 +92,21 @@ $(document).ready(() => {
         }
     }
 
-    window.addEventListener('scroll', OnScroll)
+    window.addEventListener('scroll', OnScroll);
+    window.addEventListener('resize', () => {
+        if ($('.header-slider').find('.prev').length === 0) {
+            var dots = $(".slick-dots")[0]
+            $(dots).wrap('<div class="sliderNavWrap"></div>');
+            var wrap = $('.sliderNavWrap')[0];
+            $(wrap).prepend(` <div class="prev"><img src="./img/prev.svg" alt="">
+        </div>`).append(` <div class="next">
+        <img src="./img/next.svg" alt=""> </div>`);
+        }
+
+    });
+    var dots = $(".slick-dots")[0]
+    $(dots).wrap('<div class="sliderNavWrap"></div>');
+    var wrap = $('.sliderNavWrap')[0];
+    $(wrap).prepend($('.prev')[0]).append($('.next')[0]);
+    // $(dots).append($('.slick-prev.slick-arrow')[0]);
 })
