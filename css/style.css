@@ -515,7 +515,7 @@ header {
 }
 
 .shop-item.gold {
-  background: url("../img/yellowBg.svg");
+  background-image: url("../img/yellowBg.svg");
   color: #9D5E00;
 }
 
@@ -631,6 +631,102 @@ header {
 
 .main-label span img {
   margin-left: 15px;
+}
+
+.banner {
+  background: linear-gradient(91.1deg, #DA4EDC 0.13%, #BD0FC1 40.92%);
+  height: 230px;
+  position: relative;
+}
+
+.banner .container {
+  padding-left: 10vw;
+  padding-right: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+.banner-skin {
+  z-index: 0;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+}
+
+.banner-left {
+  width: 100%;
+  float: left;
+  clear: both;
+  position: relative;
+  z-index: 1;
+}
+
+.banner-title {
+  font-size: 72px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 700;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  margin: 20px 0;
+}
+
+.banner-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.banner-subtitle {
+  font-size: 18px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  line-height: 1.5;
+  letter-spacing: 1.4px;
+  max-width: 900px;
+  margin-bottom: 20px;
+}
+
+.banner-btn {
+  font-size: 24px;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  color: #313131;
+  font-weight: 700;
+  padding: 5px 55px;
+  background: #FFF500;
+  border: none;
+  text-transform: uppercase;
+  display: block;
+}
+
+.banner-right {
+  width: 600px;
+  position: relative;
+  z-index: 1;
+}
+
+.banner .wrapItem {
+  -webkit-perspective: 900px;
+          perspective: 900px;
+  margin-top: -50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.banner .wrapItem .header-slider-item {
+  -webkit-transform: rotateY(-15deg) rotateX(13deg) rotateZ(1deg);
+          transform: rotateY(-15deg) rotateX(13deg) rotateZ(1deg);
 }
 
 footer {

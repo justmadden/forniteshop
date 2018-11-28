@@ -3,6 +3,7 @@
 $bodybg : #E5E5E5;
 $white: #ffffff;
 $radialOrangeGradient : radial-gradient(472.50px at 50% 50%, #F9BA3F 0%, #F97B3F 100%);
+$purpleGradient:  linear-gradient(91.1deg, #DA4EDC 0.13%, #BD0FC1 40.92%);
 $yellow: #FFF500;
 $purple: #CD40F1;
 $purpleDark: #6E0E87;
@@ -417,7 +418,7 @@ header{
         
     }
     &.gold{
-        background: url('../img/yellowBg.svg');
+        background-image: url('../img/yellowBg.svg');
         color: $goldDark;
         
     }
@@ -512,6 +513,77 @@ header{
     margin-left: 40px;
     & img{
         margin-left: 15px;
+    }
+}
+.banner{
+    background: $purpleGradient;
+    height: 230px;
+    position: relative;
+    .container{
+        padding-left: 10vw;
+        padding-right: 80px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+    &-skin{
+        z-index: 0;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+    }
+    &-left{
+        width: 100%;
+        float: left;
+        clear: both;
+        position: relative;
+        z-index: 1;
+    }
+    &-title{
+        font-size: 72px;
+        text-transform: uppercase;
+        color: $white;
+        font-weight: 700;
+        font-family: "Oswald", Arial, Helvetica, sans-serif;
+        margin: 20px 0;
+    }
+    &-row{
+        display: flex;
+        align-items: center
+    }
+    &-subtitle{
+        font-size: 18px;
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
+        color:$white;
+        line-height: 1.5;
+        letter-spacing: 1.4px;
+        max-width: 900px;
+        margin-bottom: 20px;
+    }
+    &-btn{
+        font-size: 24px;
+        font-family: "Oswald", Arial, Helvetica, sans-serif;
+        color: $black2;
+        font-weight: 700;
+        padding: 5px 55px;
+        background: $yellow;
+        border: none;
+        text-transform: uppercase;
+        display: block;
+    }
+    &-right{
+        width: 600px;
+        position: relative;
+        z-index: 1;
+    }
+    .wrapItem{
+        perspective: 900px;
+        margin-top: -50px;
+        display: flex;
+        justify-content: flex-end;
+        .header-slider-item{
+            transform: rotateY(-15deg) rotateX(13deg) rotateZ(1deg)
+        }
     }
 }
 footer{
